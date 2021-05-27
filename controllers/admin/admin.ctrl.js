@@ -9,6 +9,7 @@ exports.get_products = (_, res) => {
     res.render("admin/products.html", { products });
   });
 };
+
 exports.get_products_write = (_, res) => {
   res.render("admin/write.html");
 };
@@ -25,5 +26,17 @@ exports.post_products_write = (req, res) => {
   //   });
   models.Products.create(req.body).then(() => {
     res.redirect("/admin/products");
+  });
+};
+
+// exports.get_products_detail = (req, res) => {
+//   console.log("here!!!!!!!!!!", req.params);
+//   models.Products.findByPk(req.params.id).then((product) => {
+//     res.render("admin/detail.html", { product });
+//   });
+// };
+exports.get_products_detail = (req, res) => {
+  models.Products.findByPk(req.params.id).then((product) => {
+    res.render("admin/detail.html", { product });
   });
 };
