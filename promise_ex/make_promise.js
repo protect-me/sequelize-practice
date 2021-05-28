@@ -67,3 +67,6 @@ ddd
   .catch((err) => {
     console.log(err);
   });
+
+// .then(() => {})
+// 순서 : promise > resolve > .then > .then 내부 콜백함수(() => {})
