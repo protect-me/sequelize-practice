@@ -53,13 +53,17 @@ wait1seconds.then((result) => {
 
 // 5. reject로 error 처리
 const ddd = new Promise((resolve, reject) => {
-  if (true) {
-    resolve(console.log("정상처리"));
-  } else {
-    reject(console.log("에러!"));
-  }
+  // if (true) {
+  //   resolve(console.log("정상처리"));
+  // } else {
+  reject("에러!");
+  // }
 });
 
-ddd.then(() => {
-  console.log("프로미스 이행완료");
-});
+ddd
+  .then(() => {
+    console.log("프로미스 이행완료");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
