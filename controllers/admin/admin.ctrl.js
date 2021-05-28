@@ -29,12 +29,6 @@ exports.post_products_write = (req, res) => {
   });
 };
 
-// exports.get_products_detail = (req, res) => {
-//   console.log("here!!!!!!!!!!", req.params);
-//   models.Products.findByPk(req.params.id).then((product) => {
-//     res.render("admin/detail.html", { product });
-//   });
-// };
 exports.get_products_detail = (req, res) => {
   models.Products.findByPk(req.params.id).then((product) => {
     res.render("admin/detail.html", { product });
